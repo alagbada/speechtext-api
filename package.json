@@ -1,0 +1,23 @@
+{
+  "name": "speechtext-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "connect-multiparty": "^2.1.0",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "express-rate-limit": "^2.11.0",
+    "express-secure-only": "^0.2.1",
+    "nodemon": "^1.17.3",
+    "vcap_services": "^0.3.4",
+    "watson-developer-cloud": "^3.4.0"
+  }
+}
