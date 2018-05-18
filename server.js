@@ -66,9 +66,7 @@ app.use('/api/speech-to-text/token', function(req, res) {
 });
 
 const port = process.env.PORT || process.env.VCAP_APP_PORT || 3002;
-app.listen(port, function() {
-  console.log('Example IBM Watson Speech JS SDK client app & token server live at http://localhost:%s/', port);
-});
+app.listen(port);
 
 // Chrome requires https to access the user's microphone unless it's a localhost url so
 // this sets up a basic server on port 3001 using an included self-signed certificate
