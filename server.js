@@ -5,7 +5,7 @@ const express = require('express');
 const app = express();
 const watson = require('watson-developer-cloud');
 const vcapServices = require('vcap_services');
-const cors =require('cors');
+const cors = require('cors');
 
 app.use(cors());
 
@@ -43,8 +43,8 @@ app.use(express.static(__dirname + '/static'));
 var sttAuthService = new watson.AuthorizationV1(
   Object.assign(
     {
-      username: process.env.SPEECH_TO_TEXT_USERNAME, // or hard-code credentials here
-      password: process.env.SPEECH_TO_TEXT_PASSWORD
+      username: "c2187560-a3f0-4681-8977-59b9539370cb", // process.env.SPEECH_TO_TEXT_USERNAME, or hard-code credentials here
+      password: "uSYYzxLOe3GD" // process.env.SPEECH_TO_TEXT_PASSWORD
     },
     vcapServices.getCredentials('speech_to_text') // pulls credentials from environment in bluemix, otherwise returns {}
   )
@@ -66,7 +66,9 @@ app.use('/api/speech-to-text/token', function(req, res) {
 });
 
 const port = process.env.PORT || process.env.VCAP_APP_PORT || 3002;
-app.listen(port);
+app.listen(port, () => {
+  console.log(`Example IBM Watson Speech JS SDK client app & token server live at ${port}`);
+});
 
 // Chrome requires https to access the user's microphone unless it's a localhost url so
 // this sets up a basic server on port 3001 using an included self-signed certificate
